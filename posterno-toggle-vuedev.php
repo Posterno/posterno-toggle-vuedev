@@ -11,3 +11,46 @@
  *
  * @package         Posterno_Toggle_Vuedev
  */
+
+class PNO_Toggle_Vue {
+
+	public function init() {
+
+		add_action( 'admin_bar_menu', [ $this, 'admin_bar' ], 99 );
+
+	}
+
+	public function admin_bar( $wp_admin_bar ) {
+
+		$wp_admin_bar->add_node(
+			array(
+				'id'    => 'pno_vue_debug',
+				'title' => 'Vue Debug Toggle',
+				'href'  => '#',
+				'meta'  => array( 'class' => 'pno-debug-vue' ),
+			)
+		);
+
+		$wp_admin_bar->add_menu(
+			array(
+				'parent' => 'pno_vue_debug',
+				'id'     => 'pno_vue_debug-true',
+				'title'  => 'Enable debug',
+				'href'   => '#',
+			)
+		);
+
+		$wp_admin_bar->add_menu(
+			array(
+				'parent' => 'pno_vue_debug',
+				'id'     => 'pno_vue_debug-false',
+				'title'  => 'Disable debug',
+				'href'   => '#',
+			)
+		);
+
+	}
+
+}
+
+( new PNO_Toggle_Vue() )->init();
