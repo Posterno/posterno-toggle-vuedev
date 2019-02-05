@@ -8,9 +8,8 @@
 .DS_Store
 Thumbs.db
 behat.yml
-bitbucket-pipelines.yml
 bin
-.circleci/config.yml
+circle.yml
 composer.json
 composer.lock
 Gruntfile.js
@@ -20,9 +19,7 @@ phpunit.xml
 phpunit.xml.dist
 multisite.xml
 multisite.xml.dist
-.phpcs.xml
 phpcs.xml
-.phpcs.xml.dist
 phpcs.xml.dist
 README.md
 wp-cli.local.yml
