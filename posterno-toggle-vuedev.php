@@ -119,6 +119,11 @@ class PNO_Toggle_Vue {
 	 * @return boolean
 	 */
 	private function is_debug_mode_enabled() {
+
+		if ( defined( 'PNO_VUE_DEV' ) ) {
+			return (bool) PNO_VUE_DEV;
+		}
+
 		return (bool) get_option( 'posterno_vuejs_debug_mode', false );
 	}
 
