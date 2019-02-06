@@ -69,6 +69,10 @@ class PNO_Toggle_Vue {
 	 */
 	public function admin_bar( $wp_admin_bar ) {
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		if ( $this->debug_enabled === true ) {
 
 			$wp_admin_bar->add_node(
