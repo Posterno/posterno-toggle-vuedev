@@ -39,7 +39,7 @@ class PNO_Toggle_Vue {
 	 * @return void
 	 */
 	public function init() {
-		add_action( 'admin_init', [ $this, 'store' ] );
+		add_action( 'init', [ $this, 'store' ] );
 		add_action( 'admin_bar_menu', [ $this, 'admin_bar' ], 99 );
 		add_action( 'after_setup_theme', [ $this, 'trigger' ], 20 );
 	}
@@ -134,7 +134,7 @@ class PNO_Toggle_Vue {
 	 */
 	public function store() {
 
-		if ( ! current_user_can( 'manage_options' ) || ! is_admin() ) {
+		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
